@@ -1,0 +1,25 @@
+@startuml
+
+left to right direction
+
+Actor User
+Actor Admin
+
+rectangle "User System" {
+  User --> (Add product to cart)
+  User --> (Remove product from cart)
+  User --> (Access website on a mobile device)
+  User --> (View product details)
+  User --> (View cart contents)
+  User --> (Perform checkout)
+}
+
+rectangle "Admin System" {
+  Admin --> (Add a new product)
+  Admin --> (Modify existing products)
+  Admin --> (Remove products)
+  Admin --> (Add category)
+  Admin --> (Delete category)
+}
+
+@enduml
