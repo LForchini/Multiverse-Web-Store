@@ -1,22 +1,35 @@
 import express, { Request, Response } from "express";
 import Cart from "../models/cart.model";
+import CartRow from "../models/row.model";
 
 export const router = express.Router({ mergeParams: true });
 
-router.get("/", async (req: Request, res: Response) => {
-  if (req.cookies.cart) {
-    const cart = await Cart.findOne({ where: { cookie: req.cookies.cart } });
+async function getCartByCookie(cookie: string): Promise<Cart> {
+  if (cookie) {
+    const cart = await Cart.findOne({ where: { cookie: cookie } });
 
     if (cart) {
-      res.send(cart);
-      return;
+      return cart;
     }
   }
 
   const cart = new Cart();
-  const cookie = cart.generateCookie();
+  cart.generateCookie();
   await cart.save();
 
-  res.cookie("cart", cookie);
-  res.send(cart);
+  return cart;
+}
+
+router.get("/", async (req: Request, res: Response) => {
+  const cart = await getCartByCookie(req.cookies.cart);
+  res.cookie("cart", cart.cookie).send(cart);
+});
+
+router.post("/add", async (req: Request, res: Response) => {
+  const cart = await getCartByCookie(req.cookies.cart);
+  res.cookie("cart", cart.cookie);
+
+  const row = new CartRow({ cartId: cart.id, ...req.body });
+  row.save();
+  res.sendStatus(200);
 });
