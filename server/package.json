@@ -5,8 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "test": "jest",
-    "serve": "nodemon index.ts",
-    "deploy": "git subtree push --prefix server heroku main"
+    "serve": "nodemon index.ts"
   },
   "author": "",
   "license": "ISC",
