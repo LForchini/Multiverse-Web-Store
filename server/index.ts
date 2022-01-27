@@ -8,7 +8,7 @@ app.use(express.json());
 
 app.listen(PORT, async () => {
   if (process.env.NODE_ENV === "production") {
-    console.log(`Deployed at https://multiverse-store.herokuapp.com`);
+    console.log(`Deployed at https://multiverse-store-api.herokuapp.com`);
   } else {
     console.log(`Deployed at http://localhost:${PORT}`);
   }
