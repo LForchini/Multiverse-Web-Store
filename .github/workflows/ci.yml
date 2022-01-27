@@ -12,6 +12,3 @@ jobs:
 
       - name: Test server
         run: cd server && npm ci && npm test
-
-      - name: Test client
-        run: cd client && npm ci && npm test
