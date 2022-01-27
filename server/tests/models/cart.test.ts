@@ -3,7 +3,7 @@ import { sequelize } from "../../src/sequelize";
 
 describe("Cart", () => {
   beforeAll(async () => {
-    sequelize.sync();
+    await sequelize.sync();
   });
 
   it("can generate a random cookie", () => {
