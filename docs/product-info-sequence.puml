@@ -1,0 +1,15 @@
+@startuml
+
+Actor User
+Boundary "App UI"
+Control "App API"
+Database "DB"
+
+User -> "App UI" : Press product info
+"App UI" -> "App API" : LoadProductInfo(Id)
+"App API" -> "DB" : Product.findOne(id)
+"App API" <- "DB" : Product
+"App UI" <- "App API" : Product
+"User" <- "App UI" : Nicely rendered html
+
+@enduml
