@@ -1,0 +1,14 @@
+name: Test
+
+on:
+  pull_request
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test server
+        run: cd server && npm test
+      
+      -name: Test client
+        run: cd client && npm test

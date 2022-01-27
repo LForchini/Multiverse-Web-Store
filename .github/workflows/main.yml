@@ -1,0 +1,14 @@
+name: Deploy
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  deploy_code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy API
+        run: ./deploy-server.sh
+      - name: Deploy Client
+        run: ./deploy-client.sh
