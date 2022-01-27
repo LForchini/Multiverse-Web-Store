@@ -2,7 +2,7 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import { router as ProductRouter } from "./src/routes/product-route";
 import { router as CartRouter } from "./src/routes/cart-route";
-import { sequelize } from "./src/sequelize";
+import { loadFromSeed, sequelize } from "./src/sequelize";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -20,6 +20,8 @@ app.listen(PORT, async () => {
   } else {
     console.log(`Deployed at http://localhost:${PORT}`);
   }
-  await sequelize.sync();
+  await sequelize.sync({ force: true });
   console.log(`Sequelize synced`);
+  await loadFromSeed("./seed.json");
+  console.log(`Loaded ./seed.json`);
 });
