@@ -8,6 +8,9 @@ jobs:
     name: Tests
     runs-on: ubuntu-latest
     steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
       - name: Test server
         run: cd server && npm test
       
