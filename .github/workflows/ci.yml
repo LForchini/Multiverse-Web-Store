@@ -1,7 +1,6 @@
 name: Test
 
-on:
-  [pull_request]
+on: [pull_request]
 
 jobs:
   test:
@@ -13,6 +12,6 @@ jobs:
 
       - name: Test server
         run: cd server && npm test
-      
-      -name: Test client
+
+      - name: Test client
         run: cd client && npm test
