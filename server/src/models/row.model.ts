@@ -4,10 +4,10 @@ import {
   Column,
   DataType,
   ForeignKey,
-  HasOne,
   Model,
   PrimaryKey,
   Table,
+  Index,
 } from "sequelize-typescript";
 import Cart from "./cart.model";
 import Product from "./product.model";
@@ -21,6 +21,7 @@ export default class CartRow extends Model {
 
   @ForeignKey(() => Product)
   @Column(DataType.INTEGER)
+  @Index("product-cart")
   productId!: number;
 
   @BelongsTo(() => Product)
@@ -28,6 +29,7 @@ export default class CartRow extends Model {
 
   @ForeignKey(() => Cart)
   @Column(DataType.INTEGER)
+  @Index("product-cart")
   cartId!: number;
 
   @BelongsTo(() => Product)
