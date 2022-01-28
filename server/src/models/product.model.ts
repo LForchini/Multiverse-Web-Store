@@ -20,6 +20,9 @@ export default class Product extends Model {
   @Column(DataType.TEXT)
   title!: string;
 
+  @Column(DataType.TEXT)
+  image!: string;
+
   @Column(DataType.INTEGER)
   price!: number;
 
