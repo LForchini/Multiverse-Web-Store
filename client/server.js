@@ -2,7 +2,7 @@ const express = require('express');
 const Handlebars = require('handlebars')
 const { engine } = require ('express-handlebars');
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
-const fetch = require( 'node-fetch');
+const fetch = require('node-fetch');
 
 const port = 3000;
 const app = express();
@@ -42,5 +42,5 @@ app.get('/cart', (req, res) => {
 // lISTENING PORT
 
 app.listen(port, () => {
-console.log(`Server listening at http://localhost:${port}`);
+  console.log(`Server listening at http://localhost:${port}`);
 });
