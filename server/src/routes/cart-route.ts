@@ -12,7 +12,6 @@ async function getCartByCookie(cookie: string): Promise<Cart> {
       include: [CartRow],
     });
 
-    console.log(cookie, cart);
     if (cart) {
       return cart;
     }
