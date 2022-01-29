@@ -152,8 +152,14 @@ input {
   padding: 20px;
 }
 
-.price {
+.subtotal {
   margin-top: 5px;
+  font-size: 1.4rem;
+}
+
+.price {
+  color: #302e2e;
+  margin-left: 20px;
   font-size: 1.4rem;
 }
 
