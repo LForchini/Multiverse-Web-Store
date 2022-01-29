@@ -7,7 +7,10 @@ export const router = express.Router({ mergeParams: true });
 
 async function getCartByCookie(cookie: string): Promise<Cart> {
   if (cookie) {
-    const cart = await Cart.findOne({ where: { cookie: cookie } });
+    const cart = await Cart.findOne({
+      where: { cookie: cookie },
+      include: [CartRow],
+    });
 
     if (cart) {
       return cart;

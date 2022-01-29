@@ -27,16 +27,16 @@ async function getAPIData(path) {
 }
 
 app.get('/', async (req, res) => {
-  res.render('main', {items: await getAPIData('/products')});
+  res.render('main', {API_URL: API_URL, items: await getAPIData('/products')});
 });
 
 app.get('/item/:id', async (req, res) => {
   const obj = await getAPIData(`/products/${req.params.id}`)
-  res.render('item', {item: obj});
+  res.render('item', {API_URL: API_URL, item: obj});
 });
 
 app.get('/cart', (req, res) => {
-  res.render('cart');
+  res.render('cart', {API_URL: API_URL});
 });
 
 // lISTENING PORT
