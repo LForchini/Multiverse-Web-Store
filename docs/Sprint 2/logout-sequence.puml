@@ -1,0 +1,24 @@
+@startuml
+
+Actor User
+Boundary "App UI"
+Control "App API"
+Database "DB"
+
+User -> "App UI" : Enter login details
+"App UI" -> "App API" : Logout(session token)
+
+"App API" -> "DB" : User.findOne(session token)
+"App API" <- "DB" : User | null
+
+alt User exists
+"App API" -> "App API" : User.session_token = null;
+"App API" -> "DB" : User.save()
+"App UI" <- "App API" : 200
+"User" <- "App UI" : Nicely rendered html
+else User does not exist
+"App UI" <- "App API" : Error
+"User" <- "App UI" : Error message
+end
+
+@enduml
