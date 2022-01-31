@@ -1,0 +1,17 @@
+@startuml
+
+Title Admin Modify Item Failed
+
+Actor Admin as A
+Boundary "App UI"
+Control "App API"
+Database "DB"
+
+A -> "App UI" : Press modify item
+"App UI" -> "App API" : ModifyItem(Id)
+"App API" -> "DB" : Item.findOne(id)
+"App API" <- "DB" : 400: Item not found
+"App UI" <- "App API" : Item not found
+"A" <- "App UI" : 400: Item edit mode - OFF
+
+@enduml

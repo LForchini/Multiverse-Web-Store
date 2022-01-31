@@ -1,0 +1,17 @@
+@startuml
+
+Title Admin Modify Item Successful
+
+Actor Admin as A
+Boundary "App UI"
+Control "App API"
+Database "DB"
+
+A -> "App UI" : Press modify item
+"App UI" -> "App API" : ModifyItem(Id)
+"App API" -> "DB" : Item.findOne(id)
+"App API" <- "DB" : Item
+"App UI" <- "App API" : Item
+"A" <- "App UI" : Item edit mode - ON
+
+@enduml
