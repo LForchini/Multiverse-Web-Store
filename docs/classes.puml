@@ -15,15 +15,26 @@ class Cart {
   contents
 }
 
+class User {
+  id
+  accountType
+  usernameAndPassword
+  linkToCart
+  }
+
 class Category {
   id
   name
   products
   type
+  image
+  
 }
 
 Product "*" --- "1" Cart : "has"
 
 Product "*" --- "1" Category : "has"
+
+User "1" --- "1" Cart : "has"
 
 @enduml
