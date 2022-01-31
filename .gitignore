@@ -102,3 +102,8 @@ dist
 
 # TernJS port file
 .tern-port
+
+# SQLITE Database in use here
+multiverse-store.sqlite
+
+.DS_Store
