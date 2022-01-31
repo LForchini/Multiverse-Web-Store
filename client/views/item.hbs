@@ -55,15 +55,14 @@
           <div class="price-n-pref">
             <h2 class="price">£{{item.price}}</h2>
 
-            <form autocomplete="off" id="atc" name="atc" onsubmit="submitted()" action="{{API_URL}}/carts/add"
-              method="POST">
+            <form autocomplete="off" id="atc" name="atc">
               <div class="preference">
                 <label for="quantity">Quantity</label>
                 <input type="text" name="quantity" id="quant-input" value="1">
               </div>
           </div>
           <div class="btn-cont">
-            <button type="submit" value="Submit" class="btn btn-outline-dark btn-lg add-to-cart-btn">Add to
+            <button type="submit" value="Submit" onclick="addToCart()" class="btn btn-outline-dark btn-lg add-to-cart-btn">Add to
               cart</button>
           </div>
         </div>
@@ -77,5 +76,28 @@
 
       </div>
     </div>
+
+    <script>
+
+      fetch('{{API_URL}}/carts/add', {headers:{'Content-Type': 'application/json'}, body:{productId: {{item.id}}, quantity: document.getElementById('quant-input').innerText}.toString()})
+      function addToCart() {
+        const body = {
+          productId: {{item.id}},
+          quantity: document.getElementById('quant-input').value
+        }
+
+        console.log(body)
+
+        fetch('{{API_URL}}/carts/add', {
+          method:"POST",
+          headers:{
+            'Content-Type': 'application/json',
+            'cookie': document.cookie
+          },
+          body: JSON.stringify(body),
+          credentials: "include"
+        })
+      }
+    </script>
   </div>
 </section>

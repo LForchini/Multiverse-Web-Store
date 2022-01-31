@@ -8,20 +8,31 @@ import cors from "cors";
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+app.use((req, res, next) => {
+  const origin =
+    req.headers.origin == "http://localhost:3000"
+      ? "http://localhost:3000"
+      : "https://multiverse-store-api.herokuapp.com";
+  res.setHeader("Access-Control-Allow-Origin", origin);
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-Requested-With,content-type"
+  );
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  next();
+});
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
-
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  res.header("Access-Control-Allow-Credentials", "true");
-  next();
-});
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+  })
+);
 
 app.use("/products", ProductRouter);
 app.use("/carts", CartRouter);
