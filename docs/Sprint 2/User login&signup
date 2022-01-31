@@ -1,0 +1,47 @@
+@startuml
+
+title "User login/signup"
+
+actor User
+
+
+
+box "Forchini front-end" #LightBlue
+participant App_UI
+end box
+
+box "Forchini back-end" #LightGreen
+participant App_API
+end box
+
+
+App_UI -> User: prompt for signup/login
+alt  user signing up
+User -> App_UI : enter name, D.O.B, email address,number,address, password
+App_UI -> App_API: processes user details
+App_API -> Database: stores user details 
+Database --> App_API: saves account
+App_API --> App_UI: confirms details stored
+
+ else  user logging in
+        User -> App_UI: selects login
+        App_UI -> User: prompt to login
+        User -> App_UI : enter email address and password 
+        App_UI -> Database: processes user details
+        Database --> App_API: retrieves user account details
+        App_API --> App_UI:confirms user details
+        
+        
+       
+        end
+        App_UI --> User: user logs in
+
+
+
+
+
+
+      
+       
+
+@enduml
