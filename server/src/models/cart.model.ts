@@ -8,9 +8,9 @@ import {
   Model,
   PrimaryKey,
   Table,
-} from "sequelize-typescript";
-import CartRow from "./row.model";
-import User from "./user.model";
+} from 'sequelize-typescript';
+import CartRow from './row.model';
+import User from './user.model';
 
 @Table
 export default class Cart extends Model {
@@ -20,10 +20,10 @@ export default class Cart extends Model {
   id!: number;
 
   @ForeignKey(() => User)
-  @Column(DataType.INTEGER)
+  @Column({ type: DataType.INTEGER, allowNull: false })
   userId!: number;
 
-  @BelongsTo(() => User, "userId")
+  @BelongsTo(() => User, 'userId')
   user!: User;
 
   @HasMany(() => CartRow)
