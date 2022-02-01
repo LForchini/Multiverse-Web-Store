@@ -33,7 +33,7 @@ export default class User extends Model {
 
   @Index
   @Column(DataType.TEXT)
-  session!: string;
+  session!: string | null;
 
   @HasOne(() => Cart)
   cart!: Cart;
