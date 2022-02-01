@@ -1,27 +1,24 @@
-import Cart from "../../src/models/cart.model";
-import CartRow from "../../src/models/row.model";
-import { sequelize } from "../../src/sequelize";
+import Cart from '../../src/models/cart.model';
+import CartRow from '../../src/models/row.model';
+import User from '../../src/models/user.model';
+import { sequelize } from '../../src/sequelize';
 
-describe("Cart", () => {
+describe('Cart', () => {
   beforeAll(async () => {
     await sequelize.sync();
   });
 
-  it("can generate a random cookie", () => {
-    const cart = new Cart();
-    const cookie = cart.generateCookie();
-    expect(cookie.length).toBe(128);
-    expect(cart.cookie).toEqual(cookie);
-    expect(cookie).not.toEqual(cart.generateCookie());
-  });
+  it('can be created and saved', async () => {
+    const user = new User();
+    const session = user.generateSession();
+    await user.save();
+    await user.reload();
 
-  it("can be created and saved", async () => {
-    const cart = new Cart();
-    const cookie = cart.generateCookie();
+    const cart = new Cart({ userId: user.id });
     await cart.save();
-    await cart.reload({ include: [CartRow] });
+    await cart.reload({ include: [CartRow, User] });
 
-    expect(cart.cookie).toBe(cookie);
+    expect(cart.user.session).toBe(session);
     expect(cart.id).not.toBe(undefined);
     expect(cart.rows.length).toBe(0);
   });

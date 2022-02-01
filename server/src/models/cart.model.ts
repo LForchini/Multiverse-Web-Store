@@ -1,14 +1,16 @@
 import {
   AutoIncrement,
+  BelongsTo,
   Column,
   DataType,
+  ForeignKey,
   HasMany,
-  Index,
   Model,
   PrimaryKey,
   Table,
-} from "sequelize-typescript";
-import CartRow from "./row.model";
+} from 'sequelize-typescript';
+import CartRow from './row.model';
+import User from './user.model';
 
 @Table
 export default class Cart extends Model {
@@ -17,26 +19,13 @@ export default class Cart extends Model {
   @Column(DataType.INTEGER)
   id!: number;
 
-  @Index
-  @Column(DataType.TEXT)
-  cookie!: string;
+  @ForeignKey(() => User)
+  @Column({ type: DataType.INTEGER, allowNull: false })
+  userId!: number;
+
+  @BelongsTo(() => User, 'userId')
+  user!: User;
 
   @HasMany(() => CartRow)
   rows!: CartRow[];
-
-  /**
-   * Generates a random cookie and sets it.
-   * @returns The generated cookie.
-   */
-  generateCookie(): string {
-    const chars =
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-    this.cookie = "";
-    for (let i = 0; i < 128; i++) {
-      this.cookie += chars.charAt(Math.floor(Math.random() * chars.length));
-    }
-
-    return this.cookie;
-  }
 }

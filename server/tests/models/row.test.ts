@@ -1,19 +1,23 @@
-import Cart from "../../src/models/cart.model";
-import Product from "../../src/models/product.model";
-import CartRow from "../../src/models/row.model";
-import { sequelize } from "../../src/sequelize";
+import Cart from '../../src/models/cart.model';
+import Product from '../../src/models/product.model';
+import CartRow from '../../src/models/row.model';
+import User from '../../src/models/user.model';
+import { sequelize } from '../../src/sequelize';
 
-describe("Product", () => {
+describe('Product', () => {
   beforeAll(async () => {
     await sequelize.sync();
   });
 
-  it("can be created and linked with other models", async () => {
+  it('can be created and linked with other models', async () => {
+    const user = new User();
+    user.generateSession();
+    await user.save();
+    await user.reload();
     const product = new Product({});
     await product.save();
     await product.reload();
-    const cart = new Cart();
-    cart.generateCookie();
+    const cart = new Cart({ userId: user.id });
     await cart.save();
     await cart.reload();
 

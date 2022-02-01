@@ -1,45 +1,51 @@
-import express, { Request, Response } from "express";
-import { check, validationResult } from "express-validator";
-import Cart from "../models/cart.model";
-import CartRow from "../models/row.model";
+import express, { Request, Response } from 'express';
+import { check, validationResult } from 'express-validator';
+import Cart from '../models/cart.model';
+import CartRow from '../models/row.model';
+import User from '../models/user.model';
 
 export const router = express.Router({ mergeParams: true });
 
-async function getCartByCookie(cookie: string): Promise<Cart> {
-  if (cookie) {
-    const cart = await Cart.findOne({
-      where: { cookie: cookie },
-      include: [CartRow],
+async function getCartBySession(session: string): Promise<Cart> {
+  if (session) {
+    const requester = await User.findOne({
+      where: { session: session },
+      include: [Cart],
     });
 
-    if (cart) {
-      return cart;
+    if (requester) {
+      const cart = requester.cart;
+      if (cart) {
+        return cart;
+      } else {
+        const new_cart = new Cart({ userId: requester.id });
+        await new_cart.save();
+        return cart;
+      }
+    } else {
+      throw new Error('Invalid session');
     }
+  } else {
+    throw new Error('Not logged in');
   }
-
-  const cart = new Cart();
-  cart.generateCookie();
-  await cart.save();
-
-  return cart;
 }
 
-router.get("/", async (req: Request, res: Response) => {
-  const cart = await getCartByCookie(req.cookies.cart);
-  res.cookie("cart", cart.cookie).send(cart);
+router.get('/', async (req: Request, res: Response) => {
+  const cart = await getCartBySession(req.cookies.session);
+  res.cookie('session', cart.user.session).send(cart);
 });
 
 router.post(
-  "/add",
-  [check("productId").not().isEmpty(), check("quantity").not().isEmpty()],
+  '/add',
+  [check('productId').not().isEmpty(), check('quantity').not().isEmpty()],
   async (req: Request, res: Response) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const cart = await getCartByCookie(req.cookies.cart);
-    res.cookie("cart", cart.cookie);
+    const cart = await getCartBySession(req.cookies.session);
+    res.cookie('session', cart.user.session);
 
     const row = new CartRow({ cartId: cart.id, ...req.body });
     row.save();
@@ -48,16 +54,16 @@ router.post(
 );
 
 router.patch(
-  "/",
-  [check("productId").not().isEmpty(), check("quantity").not().isEmpty()],
+  '/',
+  [check('productId').not().isEmpty(), check('quantity').not().isEmpty()],
   async (req: Request, res: Response) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const cart = await getCartByCookie(req.cookies.cart);
-    res.cookie("cart", cart.cookie);
+    const cart = await getCartBySession(req.cookies.session);
+    res.cookie('session', cart.user.session);
 
     const row = await CartRow.findOne({
       where: { cartId: cart.id, productId: req.body.productId },
@@ -75,9 +81,9 @@ router.patch(
   }
 );
 
-router.delete("/:productId", async (req: Request, res: Response) => {
-  const cart = await getCartByCookie(req.cookies.cart);
-  res.cookie("cart", cart.cookie);
+router.delete('/:productId', async (req: Request, res: Response) => {
+  const cart = await getCartBySession(req.cookies.session);
+  res.cookie('session', cart.user.session);
 
   const row = await CartRow.findOne({
     where: { cartId: cart.id, productId: req.params.productId },
