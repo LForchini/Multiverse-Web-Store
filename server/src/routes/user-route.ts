@@ -46,10 +46,6 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.post('/', async (req, res) => {
-  throw new Error('Not implemented');
-});
-
 /**
  * Same formula as GET /:id
  */
@@ -72,50 +68,75 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
-router.patch('/:id', async (req, res) => {
-  const data = req.body;
-  try {
-    const requester = await getRequester(req.cookies.session);
-
-    if (requester.id.toString() === req.params.id) {
-      data.keys.array.forEach((element: string) => {
-        requester.set(element, data[element]);
-      });
-      await requester.save();
-      res.send(requester);
-    } else if (requester.type === UserTypes.ADMIN) {
-      const user = await User.findByPk(req.params.id);
-      data.keys.array.forEach((element: string) => {
-        user?.set(element, data[element]);
-      });
-      await user?.save();
-      res.send(user);
-    } else {
-      throw new Error('Permission denied');
+router.patch(
+  '/:id',
+  [
+    check('email').normalizeEmail().isEmail(),
+    check('password').isHash('sha256'),
+  ],
+  async (req: any, res: any) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
     }
-  } catch (e) {
-    res.status(400).send((e as Error).message);
+
+    try {
+      const requester = await getRequester(req.cookies.session);
+
+      if (requester.id.toString() === req.params.id) {
+        if (req.body.email) requester.email = req.body.email;
+        if (req.body.password) requester.password = req.body.password;
+        await requester.save();
+        res.send(requester);
+      } else if (requester.type === UserTypes.ADMIN) {
+        const user = await User.findByPk(req.params.id);
+        if (user) {
+          if (req.body.email) user.email = req.body.email;
+          if (req.body.password) user.password = req.body.password;
+          await user.save();
+          res.send(user);
+        } else {
+          throw new Error('User not found');
+        }
+      } else {
+        throw new Error('Permission denied');
+      }
+    } catch (e) {
+      res.status(400).send((e as Error).message);
+    }
   }
-});
+);
 
 /**
- * req.body must be in the form {username, hashedPassword}
+ * req.body must be in the form {email, hashedPassword}
  */
-router.post('/login', async (req, res) => {
-  const data = req.body;
-  const user = await User.findOne({
-    where: { username: data.username, password: data.password },
-  });
+router.post(
+  '/login',
+  [
+    check('email').normalizeEmail().isEmail(),
+    check('password').isHash('sha256'),
+  ],
+  async (req: any, res: any) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
 
-  if (user) {
-    user.generateSession();
-    await user.save();
-    res.cookie('session', user.session);
-    res.send(user);
-  } else {
-    res.status(400).send('User not found');
+    const data = req.body;
+    const user = await User.findOne({
+      where: { email: data.email, password: data.password },
+    });
+
+    if (user) {
+      user.generateSession();
+      await user.save();
+      res.cookie('session', user.session);
+      res.send(user);
+    } else {
+      res.status(400).send('User not found');
+    }
   }
-});
+);
 
 router.post('/logout', async (req, res) => {
   try {
@@ -129,14 +150,26 @@ router.post('/logout', async (req, res) => {
   }
 });
 
-router.get('/register', async (req, res) => {
-  const data = req.body;
-  const user_data = { username: data.username, password: data.password };
-  const user = new User(user_data);
-  user.generateSession();
-  await user.save();
-  const cart = new Cart({ userId: user.id });
-  cart.save();
+router.post(
+  '/register',
+  [
+    check('email').normalizeEmail().isEmail(),
+    check('password').isHash('sha256'),
+  ],
+  async (req: any, res: any) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
 
-  res.send(user);
-});
+    const data = req.body;
+    const user_data = { username: data.username, password: data.password };
+    const user = new User(user_data);
+    user.generateSession();
+    await user.save();
+    const cart = new Cart({ userId: user.id });
+    cart.save();
+
+    res.send(user);
+  }
+);
