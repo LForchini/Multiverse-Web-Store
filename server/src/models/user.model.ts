@@ -7,12 +7,12 @@ import {
   Model,
   PrimaryKey,
   Table,
-} from "sequelize-typescript";
-import Cart from "./cart.model";
+} from 'sequelize-typescript';
+import Cart from './cart.model';
 
 export enum UserTypes {
-  ADMIN = "ADMIN",
-  CUSTOMER = "CUSTOMER",
+  ADMIN = 'ADMIN',
+  CUSTOMER = 'CUSTOMER',
 }
 
 @Table
@@ -23,7 +23,7 @@ export default class User extends Model {
   id!: number;
 
   @Column(DataType.TEXT)
-  username!: string;
+  email!: string;
 
   @Column(DataType.TEXT)
   password!: string;
@@ -44,9 +44,9 @@ export default class User extends Model {
    */
   generateSession(): string {
     const chars =
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
-    this.session = "";
+    this.session = '';
     for (let i = 0; i < 128; i++) {
       this.session += chars.charAt(Math.floor(Math.random() * chars.length));
     }
