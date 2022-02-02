@@ -36,7 +36,7 @@ app.use(
 );
 
 app.use('/products', ProductRouter);
-app.use('/carts', CartRouter);
+app.use('/cart', CartRouter);
 app.use('/users', UserRouter);
 
 app.listen(PORT, async () => {
