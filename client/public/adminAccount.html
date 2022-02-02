@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forchini</title>
+  <link rel="stylesheet" href="/css/adminAccount.css">
+
+  <!-- Box Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- NavBar -->
+  <header class="shadow">
+    <a href="index.html" class="logo">Forchini</a>
+    <div class="bx bx-menu" id="menu-icon"></div>
+
+    <!-- Menu -->
+
+    <div class="icons-nav">
+      <a href="userAccount.html"><i class='bx bxs-user icon-nav'></i></a>
+    </div>
+  </header>
+
+<!-- Heading Section-->
+<section id="item-heading">
+  <h1 class="item-name"><strong>Admin Management</strong></h1>
+</section>
+
+
+<!-- Image and Price and Add -->
+
+
+<section id="recyclerView">
+  <div class="recyclerView-container">
+    <div class="row" id="recyclerView-row">
+
+      <div class="col-lg-6 col-md-12" id="des-${idx}">
+        <h2 class="rec-h2"><strong>Create Item</strong></h2>
+        <div class="filter-card rcard">
+          <form action="" autocomplete="off">
+            <div class="row" id="rowOne">
+              <div class="col-12">
+                <input type="text" name="c1" class="form-control" placeholder="Name">
+              </div>
+              <div class="col-12">
+                <input type="text" name="c1" class="form-control" placeholder="Price">
+              </div>
+
+              <div class="col-12">
+                <input type="text" name="c1" class="form-control" placeholder="Image 1">
+              </div>
+              <div class="col-12">
+                <input type="text" name="c2" class="form-control" placeholder="Image 2">
+              </div>
+              <div class="col-12">
+                <input type="text" name="c2" class="form-control" placeholder="Description">
+              </div>
+              <div class="col-12">
+                <input type="text" name="c2" class="form-control" placeholder="Category Id">
+              </div>
+              <div class="col-12">
+                <button class="btn btn-outline-dark btn-lg manage-btn type="submit">Create</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+
+      <div class="col-lg-6 col-md-12" id="des-${idx}">
+        <h2 class="rec-h2"><strong>Update Item</strong></h2>
+        <div class="filter-card rcard">
+          <form action="" autocomplete="off">
+            <div class="row" id="rowOne">
+              <div class="col-12">
+                <input type="text" name="c1" class="form-control" placeholder="Item Id">
+              </div>
+              <div class="col-12">
+                <input type="text" name="c1" class="form-control" placeholder="Name">
+              </div>
+              <div class="col-12">
+                <input type="text" name="c1" class="form-control" placeholder="Price">
+              </div>
+
+              <div class="col-12">
+                <input type="text" name="c1" class="form-control" placeholder="Image 1">
+              </div>
+              <div class="col-12">
+                <input type="text" name="c2" class="form-control" placeholder="Image 2">
+              </div>
+              <div class="col-12">
+                <input type="text" name="c2" class="form-control" placeholder="Description">
+              </div>
+              <div class="col-12">
+                <input type="text" name="c2" class="form-control" placeholder="Category Id">
+              </div>
+              <div class="col-12">
+                <button class="btn btn-outline-dark btn-lg manage-btn type="submit">Update</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-md-12" id="des-${idx}">
+        <h2 class="rec-h2"><strong>Delete Item</strong></h2>
+        <div class="filter-card rcard">
+          <form action="" autocomplete="off">
+            <div class="row" id="rowOne">
+              <div class="col-12">
+                <input type="text" name="c1" class="form-control" placeholder="Item Id">
+              </div>
+              <div class="col-12">
+                <button class="btn btn-outline-dark btn-lg manage-btn type="submit">Delete</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-md-12" id="des-${idx}">
+        <h2 class="rec-h2 warn"><strong>Delete User</strong></h2>
+        <div class="filter-card rcard">
+          <form action="" autocomplete="off">
+            <div class="row" id="rowOne">
+              <div class="col-12">
+                <input type="text" name="c1" class="form-control" placeholder="User Id">
+              </div>
+              <div class="col-12">
+                <button class="btn btn-outline-dark btn-lg manage-btn type="submit">Delete</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Copyright -->
+  <div class="copyright">
+    <p>&#169; Forchini All Rights Reserved.</p>
+  </div>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="/js/adminAccount.js"></script>
+
+</body>
+
+</html>
