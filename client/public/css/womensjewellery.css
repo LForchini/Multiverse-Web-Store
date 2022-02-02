@@ -1,0 +1,375 @@
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Poppins:wght@200;300;400;500;600;700&family=Sacramento&display=swap');
+
+* {
+  font-family: 'Nanum Myeongjo', serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  scroll-padding-top: 2rem;
+  scroll-behavior: smooth;
+}
+
+/* Some Variables */
+:root{
+  --premium-green: #2d4a1a;
+  --main-color: #ff2c1f;
+  --text-color: #020307;
+  --bg-color: #fff;
+}
+
+/* Customer Scroll */
+html::-webkit-scrollbar {
+  width: 0.5rem;
+  background: var(--text-color);
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: 5rem;
+}
+
+body {
+  background: var(--text-color);
+  color: var(--bg-color);
+}
+
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 100px;
+  transition: 0.5s;
+}
+
+header.shadow {
+  background: rgb(255, 255, 255,0.7);
+  box-shadow: 0 0 4px rgb(14, 55, 54  / 15%);
+}
+
+header.shadow .navbar a {
+  color: var(--text-color);
+}
+
+ header.shadow .logo {
+  color: var(--text-color);
+}
+
+header.shadow .icon-nav{
+  color: var(--text-color);
+}
+
+.logo {
+  font-size: 3rem; 
+  font-family: 'Sacramento', cursive;
+  color: var(--bg-color);
+}
+
+
+.navbar {
+  display: flex;
+  column-gap: 5rem;
+}
+
+.navbar li {
+  position:relative;
+}
+
+.navbar a {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--bg-color);
+}
+
+.navbar li a:link,
+.navbar li a:visited {
+    padding: 8px 0;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.4s;
+} 
+
+.navbar li a:hover,
+.navbar li a:active{
+    border-bottom: 2px solid var(--main-color);
+}
+
+#menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10000001;
+  display: none;
+}
+
+.btn {
+  padding: 0.7rem 1.4rem;
+  background: #BA0B12;
+  color: var(--bg-color);
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 400;
+  border-radius: 0.5rem;
+}
+
+.btn:hover {
+  background: #302b1d;
+  transition: 0.4s ease;
+}
+
+  .btn-shop {
+    padding: 1rem 3rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.icon-nav {
+  font-size: 1.75rem;
+  color: var(--bg-color);
+}
+
+
+.container {
+  width: 100%;
+  min-height: 640px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgb(2,3,7,0.4);
+}
+
+.container img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}
+
+.swiper-pagination-bullet {
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 0.2rem !important;
+  background: var(--bg-color) !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  width: 1.5rem !important;
+  background: var(--main-color) !important;
+}
+
+.home {
+  height: 640px;
+}
+
+.home-text {
+  z-index: 1000;
+  padding: 0 150px;
+}
+
+.home-text span {
+  color: var(--bg-color);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: 'Nanum Myeongjo', serif;
+}
+
+.home-text h1 {
+  color: var(--bg-color);
+  font-size: 3rem; 
+  font-weight: 700;
+  margin-bottom: 2rem;
+  font-family: 'Nanum Myeongjo', serif;
+}
+
+/* Jewellery section */
+
+#jewellery {
+  padding-bottom: 10%;
+}
+
+.heading {
+  width: 75%;
+  margin: 0 auto 40px auto;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--main-color);
+}
+
+.grid-container {
+  width: 95%;
+  margin-right: auto;
+  margin-left: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,auto));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.box .box-img {
+  width: 100%;
+  height: 400px;
+  margin-bottom: 20px;
+}
+
+.box .box-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 10px;
+  border: #81090d solid;
+  transition: all 0.5s ease-in-out;
+}
+
+.box .box-img img:hover {
+  filter: saturate(200%);
+  transform: scale(0.95);
+    /* filter: contrast(80%); */
+    /* transition: 1s all linear; */
+}
+
+.box h3 {
+  margin: 10px 0 20px 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  height: 44px;
+  color: rgb(196, 182, 152);
+}
+
+.price {
+  text-align: end;
+  margin-right: 20px;
+  font-size: 4rem;
+}
+
+
+
+
+/* footer */
+
+.footer {
+  max-width: 968px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.social .bx {
+  background: var(--bg-color);
+  padding: 2px;
+  font-size: 2rem;
+  border-radius: 50%;
+  border: 4px solid rgb(2, 3, 7, 0.4);
+  color: var(--main-color);
+}
+
+.social .bx:hover {
+  background: var(--main-color);
+  color: var(--bg-color);
+  transition: 0.2s all linear;
+}
+
+.copyright {
+  padding: 20px;
+  text-align: center;
+  color: var(--bg-color);
+}
+
+
+@media (max-width: 1080px) {
+  .home-text {
+    padding: 0 100px;
+  }
+}
+
+@media (max-width: 991px) {
+  header {
+    padding: 18px 4%;
+  }
+  section {
+    padding: 0 0.5%;
+  }
+
+  #footer {
+    padding: 0 3.5%;
+  }
+
+  .home-text {
+    padding: 0 4%;
+  }
+
+  .home-text h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 774px) {
+  header {
+    padding: 12px 4%;
+  }
+  #menu-icon {
+    display: initial;
+    color: var(--bg-color);
+  }
+  header.shadow #menu-icon {
+    color: var(--text-color);
+  }
+  .navbar {
+    position: absolute;
+    top: -570px;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    background: rgb(255, 255, 255,0.7);
+    row-gap: 1.4rem;
+    padding: 20px;
+    box-shadow: 4px 4px 0 4px rgb(14, 55, 54  / 15%);
+    transition: 0.2s all linear;
+    text-align: center;
+  }
+  .navbar a {
+    width: 100%;
+    color: var(--text-color);
+    font-weight: 600;
+  }
+
+  .navbar a::after {
+    display: none;
+  }
+  .navbar.active {
+    top: 100%;
+  }
+  .home-text h1 {
+    font-size: 2.4rem;
+  }
+  .btn {
+    padding: 0.6rem 1.2rem;
+  }
+
+  .logo {
+    font-size: 2.5rem;
+  }
+
+  .clothing-container {
+    grid-template-columns: repeat(auto-fit, minmax(180px,auto));
+  }
+}
+
+
