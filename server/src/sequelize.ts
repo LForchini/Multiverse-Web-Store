@@ -1,41 +1,49 @@
-import { Sequelize } from "sequelize-typescript";
-import Category from "./models/category.model";
-import Product from "./models/product.model";
+import { Sequelize } from 'sequelize-typescript';
+import Category from './models/category.model';
+import Image from './models/image.model';
+import Product from './models/product.model';
 
 const location =
-  process.env.NODE_ENV === "test" ? ":memory:" : "./multiverse-store.sqlite";
+  process.env.NODE_ENV === 'test' ? ':memory:' : './multiverse-store.sqlite';
 
 const sequelize = new Sequelize({
-  dialect: "sqlite",
+  dialect: 'sqlite',
   storage: location,
   logging: false,
-  models: [__dirname + "/models/**/*.model.ts"],
+  models: [__dirname + '/models/**/*.model.ts'],
   modelMatch: (filename, member) => {
     return (
-      filename.substring(0, filename.indexOf(".model")) === member.toLowerCase()
+      filename.substring(0, filename.indexOf('.model')) === member.toLowerCase()
     );
   },
 });
 
 async function loadFromSeed(filename: string) {
-  const products: any[] = require(filename);
-  const categories: string[] = products.map((v: any) => v.category);
+  const categories: any[] = require(filename);
 
-  for (let i = 0; i < categories.length; i++) {
-    const category = categories[i];
-    if ((await Category.findAll({ where: { name: category } })).length === 0) {
-      const c = new Category({ name: category });
-      await c.save();
-    }
-  }
+  for (let category of categories) {
+    const cat = new Category({ name: category.name, image: category.image });
+    await cat.save();
+    await cat.reload();
 
-  for (let product of products) {
-    const p = new Product(product);
-    const c = await Category.findOne({ where: { name: product.category } });
-    if (c) {
-      p.categoryId = c.id;
+    for (let product of category.products) {
+      const prod = new Product({
+        title: product.title,
+        price: product.price,
+        description: product.description,
+        categoryId: cat.id,
+      });
+      await prod.save();
+      await prod.reload();
+
+      for (let image of product.images) {
+        const img = new Image({
+          image: image,
+          productId: prod.id,
+        });
+        img.save();
+      }
     }
-    await p.save();
   }
 }
 
