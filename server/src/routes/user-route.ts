@@ -151,7 +151,7 @@ router.post('/logout', async (req, res) => {
 });
 
 router.post(
-  '/register',
+  '/',
   [
     check('email').normalizeEmail().isEmail(),
     check('password').isHash('sha256'),
@@ -167,6 +167,7 @@ router.post(
     const user = new User(user_data);
     user.generateSession();
     await user.save();
+    res.cookie('session', user.session);
     const cart = new Cart({ userId: user.id });
     cart.save();
 
