@@ -14,6 +14,7 @@ async function getCartBySession(session: string): Promise<Cart> {
     });
 
     if (requester) {
+      await requester.cart.reload({ include: [CartRow] });
       const cart = requester.cart;
       if (cart) {
         return cart;
@@ -32,7 +33,7 @@ async function getCartBySession(session: string): Promise<Cart> {
 
 router.get('/', async (req: Request, res: Response) => {
   const cart = await getCartBySession(req.cookies.session);
-  res.cookie('session', cart.user.session).send(cart);
+  res.send(cart);
 });
 
 router.post(
@@ -45,7 +46,6 @@ router.post(
     }
 
     const cart = await getCartBySession(req.cookies.session);
-    res.cookie('session', cart.user.session);
 
     const row = new CartRow({ cartId: cart.id, ...req.body });
     row.save();
@@ -63,7 +63,6 @@ router.patch(
     }
 
     const cart = await getCartBySession(req.cookies.session);
-    res.cookie('session', cart.user.session);
 
     const row = await CartRow.findOne({
       where: { cartId: cart.id, productId: req.body.productId },
@@ -83,7 +82,6 @@ router.patch(
 
 router.delete('/:productId', async (req: Request, res: Response) => {
   const cart = await getCartBySession(req.cookies.session);
-  res.cookie('session', cart.user.session);
 
   const row = await CartRow.findOne({
     where: { cartId: cart.id, productId: req.params.productId },

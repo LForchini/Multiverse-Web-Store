@@ -2,6 +2,7 @@ import { Sequelize } from 'sequelize-typescript';
 import Category from './models/category.model';
 import Image from './models/image.model';
 import Product from './models/product.model';
+import User, { UserTypes } from './models/user.model';
 
 const location =
   process.env.NODE_ENV === 'test' ? ':memory:' : './multiverse-store.sqlite';
@@ -45,6 +46,14 @@ async function loadFromSeed(filename: string) {
       }
     }
   }
+
+  const admin = new User({
+    email: 'leonardo.forchini@gmail.com',
+    password:
+      '87e87fd4d3e8579677944048cf6a083e1118b2df3ddcadadc00b7be4f8071653',
+    type: UserTypes.ADMIN,
+  });
+  await admin.save();
 }
 
 export { sequelize, loadFromSeed };

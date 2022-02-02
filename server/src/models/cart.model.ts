@@ -26,6 +26,10 @@ export default class Cart extends Model {
   @BelongsTo(() => User, 'userId')
   user!: User;
 
-  @HasMany(() => CartRow)
+  @HasMany(() => CartRow, {
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE',
+    hooks: true,
+  })
   rows!: CartRow[];
 }

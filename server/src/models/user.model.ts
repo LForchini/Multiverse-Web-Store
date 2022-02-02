@@ -35,7 +35,7 @@ export default class User extends Model {
   @Column(DataType.TEXT)
   session!: string | null;
 
-  @HasOne(() => Cart)
+  @HasOne(() => Cart, { onDelete: 'CASCADE', onUpdate: 'CASCADE', hooks: true })
   cart!: Cart;
 
   /**

@@ -6,6 +6,10 @@ import { check, validationResult } from 'express-validator';
 export const router = express.Router({ mergeParams: true });
 
 async function getRequester(session: string) {
+  if (!session) {
+    throw new Error('No current session');
+  }
+
   const requester = await User.findOne({ where: { session: session } });
 
   if (!requester) {
@@ -18,7 +22,12 @@ async function getRequester(session: string) {
 router.get('/', async (req, res) => {
   try {
     const requester = await getRequester(req.cookies.session);
-    res.send(requester);
+
+    if (requester.type === UserTypes.ADMIN) {
+      res.send(await User.findAll());
+    } else {
+      res.send(requester);
+    }
   } catch (e) {
     res.status(400).send((e as Error).message);
   }
@@ -112,10 +121,7 @@ router.patch(
  */
 router.post(
   '/login',
-  [
-    check('email').normalizeEmail().isEmail(),
-    check('password').isHash('sha256'),
-  ],
+  [check('email').isEmail(), check('password').isHash('sha256')],
   async (req: any, res: any) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -153,8 +159,9 @@ router.post('/logout', async (req, res) => {
 router.post(
   '/',
   [
-    check('email').normalizeEmail().isEmail(),
+    check('email').isEmail(),
     check('password').isHash('sha256'),
+    check('password').not().isEmpty(),
   ],
   async (req: any, res: any) => {
     const errors = validationResult(req);
@@ -163,10 +170,15 @@ router.post(
     }
 
     const data = req.body;
-    const user_data = { username: data.username, password: data.password };
+    const user_data = {
+      email: data.email,
+      password: data.password,
+      type: UserTypes.CUSTOMER,
+    };
     const user = new User(user_data);
     user.generateSession();
     await user.save();
+    await user.reload();
     res.cookie('session', user.session);
     const cart = new Cart({ userId: user.id });
     cart.save();
