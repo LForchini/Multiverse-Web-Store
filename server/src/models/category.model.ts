@@ -6,8 +6,8 @@ import {
   Model,
   PrimaryKey,
   Table,
-} from "sequelize-typescript";
-import Product from "./product.model";
+} from 'sequelize-typescript';
+import Product from './product.model';
 
 @Table
 export default class Category extends Model {
@@ -18,6 +18,9 @@ export default class Category extends Model {
 
   @Column(DataType.TEXT)
   name!: string;
+
+  @Column(DataType.TEXT)
+  image!: string;
 
   @HasMany(() => Product)
   members!: Product;

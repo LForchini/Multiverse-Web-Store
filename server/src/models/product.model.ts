@@ -4,11 +4,13 @@ import {
   Column,
   DataType,
   ForeignKey,
+  HasMany,
   Model,
   PrimaryKey,
   Table,
-} from "sequelize-typescript";
-import Category from "./category.model";
+} from 'sequelize-typescript';
+import Category from './category.model';
+import Image from './image.model';
 
 @Table
 export default class Product extends Model {
@@ -35,4 +37,7 @@ export default class Product extends Model {
 
   @BelongsTo(() => Category)
   category!: Category;
+
+  @HasMany(() => Image)
+  images!: Image[];
 }
