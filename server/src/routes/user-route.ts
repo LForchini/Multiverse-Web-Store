@@ -82,6 +82,7 @@ router.patch(
   [
     check('email').normalizeEmail().isEmail(),
     check('password').isHash('sha256'),
+    check('name').isAscii(),
   ],
   async (req: any, res: any) => {
     const errors = validationResult(req);
@@ -102,6 +103,7 @@ router.patch(
         if (user) {
           if (req.body.email) user.email = req.body.email;
           if (req.body.password) user.password = req.body.password;
+          if (req.body.name) user.name = req.body.name;
           await user.save();
           res.send(user);
         } else {
@@ -161,7 +163,9 @@ router.post(
   [
     check('email').isEmail(),
     check('password').isHash('sha256'),
-    check('password').not().isEmpty(),
+    check('password').notEmpty(),
+    check('name').isAscii(),
+    check('name').notEmpty(),
   ],
   async (req: any, res: any) => {
     const errors = validationResult(req);
@@ -173,6 +177,7 @@ router.post(
     const user_data = {
       email: data.email,
       password: data.password,
+      name: data.name,
       type: UserTypes.CUSTOMER,
     };
     const user = new User(user_data);
