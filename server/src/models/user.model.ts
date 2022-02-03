@@ -23,6 +23,9 @@ export default class User extends Model {
   id!: number;
 
   @Column(DataType.TEXT)
+  name!: string;
+
+  @Column(DataType.TEXT)
   email!: string;
 
   @Column(DataType.TEXT)

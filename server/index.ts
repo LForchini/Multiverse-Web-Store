@@ -3,6 +3,7 @@ import cookieParser from 'cookie-parser';
 import { router as ProductRouter } from './src/routes/product-route';
 import { router as CartRouter } from './src/routes/cart-route';
 import { router as UserRouter } from './src/routes/user-route';
+import { router as CategoryRouter } from './src/routes/category-route';
 import { loadFromSeed, sequelize } from './src/sequelize';
 import cors from 'cors';
 
@@ -38,6 +39,7 @@ app.use(
 app.use('/products', ProductRouter);
 app.use('/cart', CartRouter);
 app.use('/users', UserRouter);
+app.use('/categories', CategoryRouter);
 
 app.listen(PORT, async () => {
   if (process.env.NODE_ENV === 'production') {

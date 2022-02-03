@@ -22,6 +22,9 @@ export default class Category extends Model {
   @Column(DataType.TEXT)
   image!: string;
 
+  @Column(DataType.TEXT)
+  tagline!: string;
+
   @HasMany(() => Product)
   members!: Product;
 }
