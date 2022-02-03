@@ -23,9 +23,14 @@ async function getUserData() {
   const response = await fetch(`http://localhost:3001/users`, {
     credentials: 'include',
   });
-  const user = await response.json();
 
-  return user;
+  if (response.status === 400) {
+    window.location.href = './loginSignup.html';
+  } else {
+    const user = await response.json();
+
+    return user;
+  }
 }
 
 getUserData().then((user) => {

@@ -24,12 +24,16 @@ window.onscroll = () => {
 
 async function addToCart() {
   if (/(^|;)\s*session=/.test(document.cookie)) {
-    fetch('http://localhost:3001/cart/add', {
+    const response = await fetch('http://localhost:3001/cart/add', {
       method: 'POST',
       credentials: 'include',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ quantity: 1, productId: productId }),
     });
+
+    if (response.status === 400) {
+      window.location.href = './loginSignup.html';
+    }
   } else {
     window.location.href = './loginSignup.html';
   }

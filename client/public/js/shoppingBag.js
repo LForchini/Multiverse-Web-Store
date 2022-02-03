@@ -44,8 +44,13 @@ async function getCart() {
     const response = await fetch('http://localhost:3001/cart/', {
       credentials: 'include',
     });
-    const cart = await response.json();
-    return cart;
+
+    if (response.status === 400) {
+      window.location.href = './loginSignup.html';
+    } else {
+      const cart = await response.json();
+      return cart;
+    }
   } else {
     window.location.href = './loginSignup.html';
   }
