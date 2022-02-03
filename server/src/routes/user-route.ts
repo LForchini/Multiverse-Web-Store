@@ -5,7 +5,7 @@ import { check, validationResult } from 'express-validator';
 
 export const router = express.Router({ mergeParams: true });
 
-async function getRequester(session: string) {
+export async function getRequester(session: string) {
   if (!session) {
     throw new Error('No current session');
   }
