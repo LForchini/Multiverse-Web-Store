@@ -23,7 +23,11 @@ async function loadFromSeed(filename: string) {
   const categories: any[] = require(filename);
 
   for (let category of categories) {
-    const cat = new Category({ name: category.name, image: category.image });
+    const cat = new Category({
+      name: category.name,
+      image: category.image,
+      tagline: category.tagline,
+    });
     await cat.save();
     await cat.reload();
 
