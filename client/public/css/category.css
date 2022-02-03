@@ -13,7 +13,7 @@
 }
 
 /* Some Variables */
-:root{
+:root {
   --premium-green: #2d4a1a;
   --main-color: #ff2c1f;
   --text-color: #020307;
@@ -36,7 +36,6 @@ body {
   color: var(--bg-color);
 }
 
-
 header {
   position: fixed;
   width: 100%;
@@ -51,28 +50,27 @@ header {
 }
 
 header.shadow {
-  background: rgb(255, 255, 255,0.7);
-  box-shadow: 0 0 4px rgb(14, 55, 54  / 15%);
+  background: rgb(255, 255, 255, 0.7);
+  box-shadow: 0 0 4px rgb(14, 55, 54 / 15%);
 }
 
 header.shadow .navbar a {
   color: var(--text-color);
 }
 
- header.shadow .logo {
+header.shadow .logo {
   color: var(--text-color);
 }
 
-header.shadow .icon-nav{
+header.shadow .icon-nav {
   color: var(--text-color);
 }
 
 .logo {
-  font-size: 3rem; 
+  font-size: 3rem;
   font-family: 'Sacramento', cursive;
   color: var(--bg-color);
 }
-
 
 .navbar {
   display: flex;
@@ -80,7 +78,7 @@ header.shadow .icon-nav{
 }
 
 .navbar li {
-  position:relative;
+  position: relative;
 }
 
 .navbar a {
@@ -91,14 +89,14 @@ header.shadow .icon-nav{
 
 .navbar li a:link,
 .navbar li a:visited {
-    padding: 8px 0;
-    border-bottom: 2px solid transparent;
-    transition: border-bottom 0.4s;
-} 
+  padding: 8px 0;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.4s;
+}
 
 .navbar li a:hover,
-.navbar li a:active{
-    border-bottom: 2px solid var(--main-color);
+.navbar li a:active {
+  border-bottom: 2px solid var(--main-color);
 }
 
 #menu-icon {
@@ -110,7 +108,7 @@ header.shadow .icon-nav{
 
 .btn {
   padding: 0.7rem 1.4rem;
-  background: #BA0B12;
+  background: #ba0b12;
   color: var(--bg-color);
   font-family: 'Nanum Myeongjo', serif;
   font-weight: 400;
@@ -122,10 +120,10 @@ header.shadow .icon-nav{
   transition: 0.4s ease;
 }
 
-  .btn-shop {
-    padding: 1rem 3rem;
-    font-weight: 600;
-    font-size: 1.2rem;
+.btn-shop {
+  padding: 1rem 3rem;
+  font-weight: 600;
+  font-size: 1.2rem;
 }
 
 .icon-nav {
@@ -133,14 +131,13 @@ header.shadow .icon-nav{
   color: var(--bg-color);
 }
 
-
 .container {
   width: 100%;
   min-height: 640px;
   position: relative;
   display: flex;
   align-items: center;
-  background: rgb(2,3,7,0.4);
+  background: rgb(2, 3, 7, 0.4);
 }
 
 .container img {
@@ -183,7 +180,7 @@ header.shadow .icon-nav{
 
 .home-text h1 {
   color: var(--bg-color);
-  font-size: 3rem; 
+  font-size: 3rem;
   font-weight: 700;
   margin-bottom: 2rem;
   font-family: 'Nanum Myeongjo', serif;
@@ -209,7 +206,7 @@ header.shadow .icon-nav{
   margin-right: auto;
   margin-left: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px,auto));
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
   gap: 1.5rem;
   margin-top: 2rem;
 }
@@ -233,8 +230,8 @@ header.shadow .icon-nav{
 .box .box-img img:hover {
   filter: saturate(200%);
   transform: scale(0.95);
-    /* filter: contrast(80%); */
-    /* transition: 1s all linear; */
+  /* filter: contrast(80%); */
+  /* transition: 1s all linear; */
 }
 
 .box h3 {
@@ -250,9 +247,6 @@ header.shadow .icon-nav{
   margin-right: 20px;
   font-size: 4rem;
 }
-
-
-
 
 /* footer */
 
@@ -290,7 +284,6 @@ header.shadow .icon-nav{
   text-align: center;
   color: var(--bg-color);
 }
-
 
 @media (max-width: 1080px) {
   .home-text {
@@ -337,10 +330,10 @@ header.shadow .icon-nav{
     right: 0;
     display: flex;
     flex-direction: column;
-    background: rgb(255, 255, 255,0.7);
+    background: rgb(255, 255, 255, 0.7);
     row-gap: 1.4rem;
     padding: 20px;
-    box-shadow: 4px 4px 0 4px rgb(14, 55, 54  / 15%);
+    box-shadow: 4px 4px 0 4px rgb(14, 55, 54 / 15%);
     transition: 0.2s all linear;
     text-align: center;
   }
@@ -368,8 +361,6 @@ header.shadow .icon-nav{
   }
 
   .clothing-container {
-    grid-template-columns: repeat(auto-fit, minmax(180px,auto));
+    grid-template-columns: repeat(auto-fit, minmax(180px, auto));
   }
 }
-
-

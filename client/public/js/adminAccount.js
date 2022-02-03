@@ -4,33 +4,47 @@ let header = document.querySelector('header');
 let menu = document.querySelector('#menu-icon');
 let navigation = document.querySelector('.navigation');
 
-
 menu.onclick = () => {
-  menu.classList.toggle("bx-x");
-  navigation.classList.toggle("active");
-}
+  menu.classList.toggle('bx-x');
+  navigation.classList.toggle('active');
+};
 
 window.onscroll = () => {
-  menu.classList.remove("bx-x");
-  navigation.classList.remove("active");
-}
+  menu.classList.remove('bx-x');
+  navigation.classList.remove('active');
+};
 
-const filterArr = [{
-  id: 1293,
-  name: "Check Hood Cotton Blend Hooded Top",
-  image: "https://assets.burberry.com/is/image/Burberryltd/5198ECBB-59B3-477E-8B70-9DF0D51CDBC2.jpg?$BBY_V2_SL_1x1$&wid=1876&hei=1876",
-  price: 750
-}, {
-  id: 1295,
-  name: "Slim Fit Monogram Motif Stretch Cotton Poplin Shirt",
-  image: "https://assets.burberry.com/is/image/Burberryltd/83205DC0-E29E-4949-879F-BD5F477BC415.jpg?$BBY_V2_SL_1x1$&wid=1876&hei=1876",
-  price: 200
-}, {
-  id: 1297,
-  name: "14k White Gold 1.00 Carat Ring",
-  image: "https://uk.pandora.net/dw/image/v2/AAKS_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dwe2aa6bd2/images/productimages/main/159451C01_RGB.JPG?sw=1000&sh=1000&sm=fit&sfrm=png&bgcolor=F5F5F5",
-  price: 1025
-}];
+const filterArr = [
+  {
+    id: 1293,
+    name: 'Check Hood Cotton Blend Hooded Top',
+    image:
+      'https://assets.burberry.com/is/image/Burberryltd/5198ECBB-59B3-477E-8B70-9DF0D51CDBC2.jpg?$BBY_V2_SL_1x1$&wid=1876&hei=1876',
+    price: 750,
+  },
+  {
+    id: 1295,
+    name: 'Slim Fit Monogram Motif Stretch Cotton Poplin Shirt',
+    image:
+      'https://assets.burberry.com/is/image/Burberryltd/83205DC0-E29E-4949-879F-BD5F477BC415.jpg?$BBY_V2_SL_1x1$&wid=1876&hei=1876',
+    price: 200,
+  },
+  {
+    id: 1297,
+    name: '14k White Gold 1.00 Carat Ring',
+    image:
+      'https://uk.pandora.net/dw/image/v2/AAKS_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dwe2aa6bd2/images/productimages/main/159451C01_RGB.JPG?sw=1000&sh=1000&sm=fit&sfrm=png&bgcolor=F5F5F5',
+    price: 1025,
+  },
+];
+
+async function CreateItem() {}
+
+async function UpdateItem() {}
+
+async function DeleteItem() {}
+
+async function DeleteUser() {}
 
 // const fContainer = document.getElementById('recyclerView-row');
 
@@ -62,8 +76,3 @@ const filterArr = [{
 //   `;
 //   fContainer.insertAdjacentHTML("afterbegin", content);
 // });
-
-
-
-
-

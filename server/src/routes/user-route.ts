@@ -187,7 +187,6 @@ router.post(
     res.cookie('session', user.session);
     const cart = new Cart({ userId: user.id });
     cart.save();
-
     res.send(user);
   }
 );
