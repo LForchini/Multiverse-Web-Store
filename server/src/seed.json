@@ -2,6 +2,7 @@
   {
     "name": "men's clothing",
     "image": "https://images.unsplash.com/photo-1505022610485-0249ba5b3675?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80",
+    "tagline": "Unleash the chic with our finest selection",
     "products": [
       {
         "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -79,6 +80,7 @@
   {
     "name": "women's jewelery",
     "image": "https://images.unsplash.com/photo-1617228726430-ecd6faf2f1b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80",
+    "tagline": "Sparkle yourself with our greatest deals",
     "products": [
       {
         "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
@@ -162,6 +164,7 @@
   {
     "name": "men's jewelery",
     "image": "https://tillysveaas.co.uk/wp-content/uploads/2019/11/Tilly8408-2-scaled.jpg",
+    "tagline": "Find your rock to keep you rolling",
     "products": [
       {
         "title": "9ct Yellow Gold 18 Inch Curb Chain",
@@ -213,6 +216,7 @@
   {
     "name": "electronics",
     "image": "https://freepngimg.com/thumb/technology/7-2-technology-picture-thumb.png",
+    "tagline": "Upgrade your tech wardrobe with our best deals",
     "products": [
       {
         "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
@@ -300,7 +304,7 @@
   {
     "name": "women's clothing",
     "image": "https://img.ohpolly.com/gJs2NxHrS-u5sWArUA4kBHNbhdc=/fit-in/catalog/product/4/9/4963_6_no-promises-gold-embellished-knee-lenght-bodycon-dress_1.jpg",
-
+    "tagline": "Possess the dress to imppress now!",
     "products": [
       {
         "title": "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
