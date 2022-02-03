@@ -41,9 +41,11 @@ const calcTotal = () => {
 
 async function getCart() {
   if (/(^|;)\s*session=/.test(document.cookie)) {
-    fetch('http://localhost:3001/cart/', {
+    const response = await fetch('http://localhost:3001/cart/', {
       credentials: 'include',
     });
+    const cart = await response.json();
+    return cart;
   } else {
     window.location.href = './loginSignup.html';
   }
@@ -57,7 +59,7 @@ getCart().then((cart) => {
   <div class="col-lg-5 col-md-6" id="img-${idx}">
   <div class="filter-card rcard">
     <div class="rec-img-cont">
-    <div class="rec-img"><img src=${result.images[0]}  alt="">
+    <div class="rec-img"><img src=${result.product.images[0].image}  alt="">
     </div>
     </div>
   </div>
@@ -65,14 +67,14 @@ getCart().then((cart) => {
 
 <div class="col-lg-4 col-md-5" id="des-${idx}">
   <div class="filter-card rcard">
-    <h2 class="rec-h2"><strong>${result.title}</strong></h2>
-      <h2 class="price" id="p${idx}">£${result.price}</h2>
+    <h2 class="rec-h2"><strong>${result.product.title}</strong></h2>
+      <h2 class="price" id="p${idx}">£${result.product.price}</h2>
     <div class="price-n-pref">
       <div class="preference">
         <label for="quantity">Quantity</label>
-        <input type="text" name="quantity" id="q${idx}" value="1" onchange="quantChanged(this)">
+        <input type="text" name="quantity" id="q${idx}" value="${result.quantity}" onchange="quantChanged(this)">
     </div>
-      <h2 class="subtotal" id="st${idx}">£${result.price} </h2>
+      <h2 class="subtotal" id="st${idx}">£${result.product.price} </h2>
     </div>
     <h2 class="remove" id="r${idx}" onclick="remove(this)">remove</h2>
   </div>

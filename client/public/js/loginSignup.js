@@ -31,6 +31,8 @@ login_btn.addEventListener('click', async () => {
   const loginInfo = { email: email, password: password };
 
   if (login.innerHTML == 'Sign Up') {
+    loginInfo.name = document.getElementById('name-input').value;
+
     // REGISTER
     await fetch('http://localhost:3001/users', {
       method: 'POST',
@@ -67,7 +69,7 @@ signup.addEventListener('click', () => {
     const contents = `
     <div id="added-input" class="field">
     <span><i class='bx bxs-user'></i></span>
-    <input type="text" required placeholder="Full Name">
+    <input type="text" id="name-input" required placeholder="Full Name">
     </div>
     `;
     form.insertAdjacentHTML('afterbegin', contents);
