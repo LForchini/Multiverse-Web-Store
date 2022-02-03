@@ -25,12 +25,19 @@ async function getUserData() {
   });
 
   if (response.status === 400) {
-    window.location.href = './loginSignup.html';
+    window.location.href = 'loginSignup.html';
   } else {
     const user = await response.json();
 
     return user;
   }
+}
+
+async function logout() {
+  fetch(`http://localhost:3001/users/logout`, {
+    credentials: 'include',
+    method: 'POST',
+  });
 }
 
 getUserData().then((user) => {

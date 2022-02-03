@@ -38,7 +38,16 @@ const filterArr = [
   },
 ];
 
-async function CreateItem() {}
+async function CreateItem() {
+  const item = {
+    title: document.getElementById('c1').value,
+    price: document.getElementById('c2').value,
+    images: [
+      document.getElementById('c3').value,
+      docuemnt.getElementById('c4').value,
+    ],
+  };
+}
 
 async function UpdateItem() {}
 

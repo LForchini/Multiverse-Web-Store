@@ -49,8 +49,9 @@ login_btn.addEventListener('click', async () => {
       body: JSON.stringify(loginInfo),
     });
   }
-
-  window.location.href = '../userAccount.html';
+  setTimeout(() => {
+    window.location.href = './userAccount.html';
+  }, 300);
 });
 
 signup.addEventListener('click', () => {

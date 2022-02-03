@@ -8,10 +8,9 @@ import {
   PrimaryKey,
   Table,
   Index,
-  NotNull,
-} from "sequelize-typescript";
-import Cart from "./cart.model";
-import Product from "./product.model";
+} from 'sequelize-typescript';
+import Cart from './cart.model';
+import Product from './product.model';
 
 @Table
 export default class CartRow extends Model {
@@ -22,18 +21,18 @@ export default class CartRow extends Model {
 
   @ForeignKey(() => Product)
   @Column({ type: DataType.INTEGER, allowNull: false })
-  @Index("product-cart")
+  @Index('product-cart')
   productId!: number;
 
-  @BelongsTo(() => Product, "productId")
+  @BelongsTo(() => Product, 'productId')
   product!: Product;
 
   @ForeignKey(() => Cart)
   @Column({ type: DataType.INTEGER, allowNull: false })
-  @Index("product-cart")
+  @Index('product-cart')
   cartId!: number;
 
-  @BelongsTo(() => Cart, "cartId")
+  @BelongsTo(() => Cart, 'cartId')
   cart!: Cart;
 
   @Column({ type: DataType.INTEGER, allowNull: false })
