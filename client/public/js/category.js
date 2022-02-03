@@ -23,9 +23,12 @@ window.onscroll = () => {
 };
 
 async function getCategoryData() {
-  const response = await fetch(`http://localhost:3001/category/${categoryId}`, {
-    credentials: 'include',
-  });
+  const response = await fetch(
+    `http://localhost:3001/categories/${categoryId}`,
+    {
+      credentials: 'include',
+    }
+  );
   const category = await response.json();
   return category;
 }
@@ -39,8 +42,8 @@ getCategoryData().then((categoryData) => {
     <a href="item.html?id=${result.id}">
     <img src="${result.images[0].image}" alt=""></a>
   </div>
-  <h3>${result.name}</h3>
-  <h3 class="price">${result.price}</h3>
+  <h3>${result.title}</h3>
+  <h3 class="price">£${result.price}</h3>
 </div>
   `;
     container2.insertAdjacentHTML('beforeend', content);
