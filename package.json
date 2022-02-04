@@ -2,7 +2,7 @@
   "name": "multiverse-web-store",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "jest",
     "serve": "nodemon index.ts"
@@ -11,7 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.2",
-    "node-fetch": "^2.6.7",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.5",
     "@types/cookie-parser": "^1.4.2",
