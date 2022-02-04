@@ -1,8 +1,8 @@
-import Cart from '../../src/models/cart.model';
-import Product from '../../src/models/product.model';
-import CartRow from '../../src/models/row.model';
-import User from '../../src/models/user.model';
-import { sequelize } from '../../src/sequelize';
+import Cart from '../../api/src/models/cart.model';
+import Product from '../../api/src/models/product.model';
+import CartRow from '../../api/src/models/row.model';
+import User from '../../api/src/models/user.model';
+import { sequelize } from '../../api/src/sequelize';
 
 describe('Product', () => {
   beforeAll(async () => {

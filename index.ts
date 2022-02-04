@@ -1,7 +1,7 @@
 import express from 'express';
-import { app as API_Router } from './api-controller';
+import { app as API_Router } from './api/api-controller';
 import cookieParser from 'cookie-parser';
-import { sequelize, loadFromSeed } from './src/sequelize';
+import { sequelize, loadFromSeed } from './api/src/sequelize';
 
 const port = 3000;
 const app = express();

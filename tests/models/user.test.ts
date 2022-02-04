@@ -1,5 +1,5 @@
-import User from '../../src/models/user.model';
-import { sequelize } from '../../src/sequelize';
+import User from '../../api/src/models/user.model';
+import { sequelize } from '../../api/src/sequelize';
 
 describe('User', () => {
   beforeAll(async () => {
