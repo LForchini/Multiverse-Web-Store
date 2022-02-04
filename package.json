@@ -1,8 +1,8 @@
 {
-  "name": "client",
+  "name": "multiverse-web-store",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "jest",
     "serve": "nodemon index.ts"
