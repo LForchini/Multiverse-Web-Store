@@ -13,7 +13,7 @@ const signup = document.querySelector('.signup');
 let forgot = document.getElementById('forgot');
 let login_btn = document.getElementsByTagName('button')[0];
 let login = document.getElementsByTagName('h1')[0];
-let form = document.getElementsByTagName('form')[0];
+let form = document.getElementById('form');
 
 show_btn.addEventListener('click', () => {
   if (pass_field.type === 'password') {
