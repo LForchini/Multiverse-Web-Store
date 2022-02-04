@@ -34,7 +34,7 @@ login_btn.addEventListener('click', async () => {
     loginInfo.name = document.getElementById('name-input').value;
 
     // REGISTER
-    await fetch('http://localhost:3001/users', {
+    await fetch('api/users', {
       method: 'POST',
       credentials: 'include',
       headers: { 'Content-Type': 'application/json' },
@@ -42,7 +42,7 @@ login_btn.addEventListener('click', async () => {
     });
   } else {
     // LOGIN
-    await fetch('http://localhost:3001/users/login', {
+    await fetch('api/users/login', {
       method: 'POST',
       credentials: 'include',
       headers: { 'Content-Type': 'application/json' },

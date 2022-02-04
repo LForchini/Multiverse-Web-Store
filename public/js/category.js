@@ -23,12 +23,9 @@ window.onscroll = () => {
 };
 
 async function getCategoryData() {
-  const response = await fetch(
-    `http://localhost:3001/categories/${categoryId}`,
-    {
-      credentials: 'include',
-    }
-  );
+  const response = await fetch(`api/categories/${categoryId}`, {
+    credentials: 'include',
+  });
   const category = await response.json();
   return category;
 }

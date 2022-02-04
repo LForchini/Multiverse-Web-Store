@@ -20,7 +20,7 @@ async function deleteAccount() {
 }
 
 async function getUserData() {
-  const response = await fetch(`http://localhost:3001/users`, {
+  const response = await fetch(`api/users`, {
     credentials: 'include',
   });
 
@@ -34,7 +34,7 @@ async function getUserData() {
 }
 
 async function logout() {
-  fetch(`http://localhost:3001/users/logout`, {
+  fetch(`api/users/logout`, {
     credentials: 'include',
     method: 'POST',
   });

@@ -11,4 +11,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Test server
-        run: cd server && npm ci && npm test
+        run: npm ci && npm test
