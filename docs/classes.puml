@@ -1,0 +1,29 @@
+@startuml
+
+class Product {
+  id
+  title
+  price
+  description
+  category
+  image
+}
+
+class Cart {
+  id
+  token
+  contents
+}
+
+class Category {
+  id
+  name
+  products
+  type
+}
+
+Product "*" --- "1" Cart : "has"
+
+Product "*" --- "1" Category : "has"
+
+@enduml

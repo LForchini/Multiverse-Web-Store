@@ -1,0 +1,21 @@
+@startuml
+
+Actor User
+Boundary "App UI"
+Control "App API"
+Database "DB"
+
+User -> "App UI" : Press cart icon
+"App UI" -> "App API" : LoadUserCart(cookie | null)
+
+alt Cart exists
+"App API" -> "DB" : Cart.findOne(cookie)
+else Cart does not exist
+"App API" -> "DB" : Cart.create()
+end
+"App API" <- "DB" : Cart
+"App UI" <- "App API" : Cart
+"User" <- "App UI" : Nicely rendered html
+
+
+@enduml
