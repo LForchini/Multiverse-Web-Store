@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forchini</title>
+    <link rel="stylesheet" href="/css/item.css" />
+
+    <!-- Box Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+      integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+
+  <body>
+    <!-- NavBar -->
+    <header class="shadow">
+      <a href="index.html" class="logo">Forchini</a>
+      <div class="bx bx-menu" id="menu-icon"></div>
+
+      <!-- Menu -->
+      <ul class="navigation">
+        <li><a href="index.html#clothing">Clothing</a></li>
+        <li><a href="index.html#jewellery">Jewellery</a></li>
+        <li><a href="index.html#electronics">Electronics</a></li>
+      </ul>
+      <div class="icons-nav">
+        <a href="shoppingBag.html"
+          ><i class="bx bxs-shopping-bag-alt icon-nav"></i
+        ></a>
+        <a href="userAccount.html"><i class="bx bxs-user icon-nav"></i></a>
+      </div>
+    </header>
+
+    <div id="dynamic-root">
+      <div>
+        <!-- Heading Section-->
+        <section id="item-heading">
+          <h1 class="item-name">
+            <strong>{title}</strong>
+          </h1>
+        </section>
+
+        <!-- Image and Price and Add -->
+
+        <section id="recyclerView">
+          <div class="recyclerView-container">
+            <div class="row" id="recyclerView-row">
+              <div class="col-lg-7 col-md-6">
+                {{#each images}}
+                <div class="filter-card rcard">
+                  <div class="rec-img-cont">
+                    <div class="rec-img">
+                      <img src="{{this.image}}" alt="" />
+                    </div>
+                  </div>
+                </div>
+                {{/each}}
+              </div>
+
+              <div class="col-lg-5 col-md-6">
+                <div class="filter-card rcard">
+                  <h2 class="rec-h2 item-name">
+                    <strong>{{title}}</strong>
+                  </h2>
+                  <div class="price-n-pref">
+                    <h2 class="price">£{{price}}</h2>
+                    <h4 class="available">
+                      <i class="bx bx-check"></i>Available
+                    </h4>
+                  </div>
+                  <div class="btn-cont">
+                    <button
+                      type="button"
+                      class="btn btn-outline-dark btn-lg add-to-cart-btn"
+                      onclick="addToCart()"
+                    >
+                      Add to Shopping Bag
+                    </button>
+                  </div>
+                </div>
+
+                <div class="filter-card rcard">
+                  <h2 class="rec-h2"><strong>Details</strong></h2>
+                  <p class="rec-h2">{{description}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Footer -->
+
+    <section class="footer" id="footer">
+      <a href="#" class="logo">Forchini</a>
+      <div class="social">
+        <a href="#"><i class="bx bxl-facebook"></i></a>
+        <a href="#"><i class="bx bxl-twitter"></i></a>
+        <a href="#"><i class="bx bxl-instagram"></i></a>
+        <a href="#"><i class="bx bxl-tiktok"></i></a>
+      </div>
+    </section>
+
+    <!-- Copyright -->
+    <div class="copyright">
+      <p>&#169; Forchini All Rights Reserved.</p>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="/js/item.js"></script>
+  </body>
+</html>

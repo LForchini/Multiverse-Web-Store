@@ -1,0 +1,262 @@
+[
+  {
+    "name": "men's clothing",
+    "image": "https://images.unsplash.com/photo-1505022610485-0249ba5b3675?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80",
+    "tagline": "Unleash the chic with our finest selection",
+    "products": [
+      {
+        "title": "Check Hood Cotton Blend Hooded Top",
+        "price": 750,
+        "description": "A classic silhouette in a brushed-back cotton blend, highlighted with a contrasting check flannel hood and leather-trimmed drawcord.",
+        "images": [
+          "https://assets.burberry.com/is/image/Burberryltd/5198ECBB-59B3-477E-8B70-9DF0D51CDBC2.jpg?$BBY_V2_SL_1x1$&wid=1876&hei=1876",
+          "https://assets.burberry.com/is/image/Burberryltd/7CB29CAF-CBE3-4864-ABED-0CADDFEAC2E9.jpg?$BBY_V2_ML_1x1$&wid=1876&hei=1876"
+        ]
+      },
+      {
+        "title": "Check Hood Cotton Blend Hoodie",
+        "price": 750,
+        "description": "A classic silhouette in a brushed-back cotton blend, highlighted with a contrasting check flannel hood and leather-trimmed drawcord.",
+        "images": [
+          "https://assets.burberry.com/is/image/Burberryltd/CBBEB942-C325-4152-9426-4AE6324F9D59.jpg?$BBY_V2_SL_1x1$&wid=1876&hei=1876",
+          "https://assets.burberry.com/is/image/Burberryltd/3BD67EAC-BE08-4C39-9D99-866FC8DA01D6.jpg?$BBY_V2_ML_1x1$&wid=1876&hei=1876"
+        ]
+      },
+      {
+        "title": "The Pimlico Heritage Car Coat",
+        "price": 950,
+        "description": "The Car Coat is a versatile, single-breasted style rooted in our motoring heritage. Light and protective, it is made in England in our signature cotton gabardine and lined in our Vintage check – a print first used in the 1960s. The Pimlico fit is softly tailored with a straight cut that slips easily over other layers. The style is finished with set-in sleeves.",
+        "images": [
+          "https://assets.burberry.com/is/image/Burberryltd/C25C437F-AD45-4BB9-AEAB-6C4F098C3338.jpg?$BBY_V2_SL_1x1$&wid=1876&hei=1876",
+          "https://assets.burberry.com/is/image/Burberryltd/FDB196A4-01FD-4F9E-B470-6479C5C72511.jpg?$BBY_V2_ML_1x1$&wid=1876&hei=1876"
+        ]
+      },
+      {
+        "title": "Slim Fit Monogram Motif Stretch Cotton Poplin Shirt",
+        "price": 200,
+        "description": "A slim-fit shirt in stretch cotton poplin, featuring an embroidered Thomas Burberry Monogram. Turn up the cuffs to reveal a flash of our Vintage check.",
+        "images": [
+          "https://assets.burberry.com/is/image/Burberryltd/83205DC0-E29E-4949-879F-BD5F477BC415.jpg?$BBY_V2_SL_1x1$&wid=1876&hei=1876",
+          "https://assets.burberry.com/is/image/Burberryltd/019E1A5D-20E7-4BA7-BA80-0C7AB490AE93.jpg?$BBY_V2_SL_1x1$&wid=1876&hei=1876"
+        ]
+      },
+      {
+        "title": "Check Panel Cotton Blend Jogging Pants",
+        "price": 425,
+        "description": "A solid sterling silver pendant hand set with a 0.15 carat lab-created diamond on a matching sterling silver necklace. A powerful reminder of all we are, all we can be, and the infinite possibility the future holds. This pendant features a fiery round brilliant diamond in a modern infinity setting that flows around the stone and suspends it in mid-air. The chain is easily adjustable to two lengths.",
+        "images": [
+          "https://assets.burberry.com/is/image/Burberryltd/939D8329-3103-4F1D-82E2-F8B710603C1E.jpg?$BBY_V2_SL_1x1$&wid=1876&hei=1876",
+          "https://assets.burberry.com/is/image/Burberryltd/5E4C76F4-3C36-477A-86F2-92656D8E0773.jpg?$BBY_V2_ML_1x1$&wid=1876&hei=1876"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "women's jewelery",
+    "image": "https://images.unsplash.com/photo-1617228726430-ecd6faf2f1b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80",
+    "tagline": "Sparkle yourself with our greatest deals",
+    "products": [
+      {
+        "title": "Sparkling Statement Halo Stud Earrings",
+        "price": 800,
+        "description": "Make your look shine with the Sparkling Statement Halo Earrings. Stunning raised oval princess blue man-made crystals are framed by a halo of sparkling clear cubic zirconia stones to create the feel of heirloom jewellery. Hand-finished in sterling silver, the earrings feature a prong setting to elevate the main stone from its pavé frame. Elevate your everyday style with these show-stoppers or wear them to make special occasions sparkle even more.",
+        "images": [
+          "https://uk.pandora.net/dw/image/v2/AAKS_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dwfa8378cb/images/productimages/main/290040C01_RGB.JPG?sw=1000&sh=1000&sm=fit&sfrm=png&bgcolor=F5F5F5",
+          "https://uk.pandora.net/dw/image/v2/AAKS_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dw6f8ba4d3/images/productimages/modelshot/290040C01_ABC123_MODEL_eCOM_02_RGB.JPG?sw=1000&sh=1000&sm=fit&sfrm=png&bgcolor=F5F5F5"
+        ]
+      },
+      {
+        "title": "January Birthstone Heart Dangle Charm",
+        "price": 730,
+        "description": "Representing the month of January, this heart-shaped dangle charm is hand-finished in sterling silver and features a claw-set buff top-cut dark red man-made stone in the centre. Wear it on bracelets or necklaces to define and redefine your style by choosing colours that express who you are.",
+        "images": [
+          "https://uk.pandora.net/dw/image/v2/AAKS_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dwf595ac0c/images/productimages/singlepackshot/798854C08_V4_RGB.JPG?sw=1000&sh=1000&sm=fit&sfrm=png&bgcolor=F5F5F5",
+          "https://uk.pandora.net/dw/image/v2/AAKS_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dwad22719a/images/productimages/main/798854C08_RGB.JPG?sw=1000&sh=1000&sm=fit&sfrm=png&bgcolor=F5F5F5"
+        ]
+      },
+      {
+        "title": "14k White Gold 1.00 Carat Ring",
+        "price": 1024,
+        "description": "A solid 14k white gold ring hand set with a 1.00 carat lab-created diamond. A beautiful statement of empowerment and possibility, or a simple yet eloquent declaration of love. This ring features a scintillating round brilliant diamond in a modern infinity setting that flows seamlessly around the stone. It can be worn alone or stacked with other rings from the Brilliance collection. Extra sizes now available so you can find the perfect fit.",
+        "images": [
+          "https://uk.pandora.net/dw/image/v2/AAKS_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dwaa047042/images/productimages/modelshot/159451C01_ABC123_MODEL_eCOM_01_RGB.JPG?sw=1000&sh=1000&sm=fit&sfrm=png&bgcolor=F5F5F5",
+          "https://uk.pandora.net/dw/image/v2/AAKS_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dwe2aa6bd2/images/productimages/main/159451C01_RGB.JPG?sw=1000&sh=1000&sm=fit&sfrm=png&bgcolor=F5F5F5"
+        ]
+      },
+      {
+        "title": "Timeless Wish Sparkling Heart Ring",
+        "price": 780,
+        "description": "Surprise the one you love with our Sparkling Wishbone Heart Ring. Hand-finished in 14k gold plating, this piece is inspired by classic design elements. The heart detail has been incorporated into our iconic V-shape, creating a design ready to be adored. Clear cubic zirconia decorate the heart and top of the ring band. Present this style to someone special to show how much you care.",
+        "images": [
+          "https://uk.pandora.net/dw/image/v2/AAKS_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dw34240046/images/productimages/main/169302C01_RGB.JPG?sw=1000&sh=1000&sm=fit&sfrm=png&bgcolor=F5F5F5",
+          "https://uk.pandora.net/dw/image/v2/AAKS_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dw8d8cbe48/images/productimages/singlepackshot/169302C01_V2_RGB.JPG?sw=1000&sh=1000&sm=fit&sfrm=png&bgcolor=F5F5F5"
+        ]
+      },
+      {
+        "title": "Sterling Silver 0.25 Carat Pendant & Necklace",
+        "price": 900,
+        "description": "A solid sterling silver pendant hand set with a 0.15 carat lab-created diamond on a matching sterling silver necklace. A powerful reminder of all we are, all we can be, and the infinite possibility the future holds. This pendant features a fiery round brilliant diamond in a modern infinity setting that flows around the stone and suspends it in mid-air. The chain is easily adjustable to two lengths.",
+        "images": [
+          "https://uk.pandora.net/dw/image/v2/AAKS_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dw0c6dac92/images/productimages/main/399462C01_RGB.JPG?sw=1000&sh=1000&sm=fit&sfrm=png&bgcolor=F5F5F5",
+          "https://uk.pandora.net/dw/image/v2/AAKS_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dwfdd1d83c/images/productimages/singlepackshot/399462C01_V2_RGB.JPG?sw=1000&sh=1000&sm=fit&sfrm=png&bgcolor=F5F5F5"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "men's jewelery",
+    "image": "https://tillysveaas.co.uk/wp-content/uploads/2019/11/Tilly8408-2-scaled.jpg",
+    "tagline": "Find your rock to keep you rolling",
+    "products": [
+      {
+        "title": "9ct Yellow Gold 18 Inch Curb Chain",
+        "price": 450,
+        "description": "With its tough-talking design and versatile appeal, this 9ct Gold Hollow 6Sided Curb Necklace 18' promises to become a welcomed and much loved addition to your accessory collection - proving that timeless design never fails to make a striking impact. This bold statement necklace is perfect for adding a whole new dimension to your day-to-night jewellery collection, demonstrating that classic pieces never go out of style.",
+        "images": [
+          "https://content.thewosgroup.com/productimage/13010145/13010145_1.jpg?impolicy=zoom",
+          "https://content.thewosgroup.com/productimage/13010145/13010145_3.jpg?impolicy=zoom "
+        ]
+      },
+      {
+        "title": "Platinum Mens 2 Groove Fancy Ring",
+        "price": 1200,
+        "description": "This handsome gent's band is designed to be worn by an edgy, image savvy gent. This gentlemen's band is crafted from palladium and features a stunning platinum detailing which spans its circumference, adding subtle detail to this already minimalistic design.",
+        "images": [
+          "https://content.thewosgroup.com/productimage/08560004/08560004_1.jpg?impolicy=zoom",
+          "https://content.thewosgroup.com/productimage/08560004/08560004_2.jpg?impolicy=zoom"
+        ]
+      },
+      {
+        "title": "Silver Mens Box Belcher Bracelet",
+        "price": 185,
+        "description": "Silver Mens Box Belcher Bracelet. Chain Length: 8.5 inch.",
+        "images": [
+          "https://content.thewosgroup.com/productimage/11700159/11700159_1.jpg?impolicy=zoom",
+          "https://content.thewosgroup.com/productimage/11700159/11700159_2.jpg?impolicy=zoom"
+        ]
+      },
+      {
+        "title": "Dice Cufflinks",
+        "price": 665,
+        "description": "Dice cufflinks, made from 316L Stainless Steel. Showcasing two 360 degree rotating Dice, a feature which has been patented worldwide. Built with 34 components, these sophisticated cufflinks have been inspired by the field of high mechanics.",
+        "images": [
+          "https://content.thewosgroup.com/productimage/39160001/39160001_2.jpg?impolicy=zoom",
+          "https://content.thewosgroup.com/productimage/39160001/39160001_3.jpg?impolicy=zoom"
+        ]
+      },
+      {
+        "title": "18ct White Gold 0.50ct Goldsmiths Brightest Diamond 4 Claw Stud Earrings",
+        "price": 1300,
+        "description": "These impressive 18 Carat White Gold 0.50 Carat round cut diamond stud earrings shine even in the darkest of rooms. Each diamond is held firmly in place with a 4 claw setting that allows you to see the diamond and its sparkle from all angles. Perfect for any occasion the design is timeless and sophisticated yet undeniably glamorous.",
+        "images": [
+          "https://content.thewosgroup.com/productimage/12153116/12153116_1.jpg?impolicy=zoom",
+          "https://content.thewosgroup.com/productimage/12153116/12153116_4.jpg?impolicy=zoom"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "electronics",
+    "image": "https://mobilesyrup.com/wp-content/uploads/2021/02/framework-laptop-header-2048x1151.jpg",
+    "tagline": "Upgrade your tech wardrobe with our best deals",
+    "products": [
+      {
+        "title": "OnePlus 9 pro",
+        "price": 899,
+        "description": " Co-developed with Hasselblad, the exclusive Hasselblad Camera for Mobile delivers multiple breakthroughs including Natural Color Calibration. The ultra-flagship camera blends the technological excellence of OnePlus and the legacy of Hasselblad. With the OnePlus 9 Pro, taking Your Best Shot is now effortless.",
+        "images": [
+          "https://fdn2.gsmarena.com/vv/pics/oneplus/oneplus-9-pro-2.jpg",
+          "https://cdn.tgdd.vn/Files/2021/03/23/1337749/oneplus-9-1_800x450-600x400.gif"
+        ]
+      },
+      {
+        "title": " DELL Latitude 7420 14\" Laptop - Intel® Core™ i5, 256 GB SSD, Grey ",
+        "price": 1299,
+        "description": " Get your work done or unwind and watch a movie on the Dell Latitude 7420 14\" Laptop. It's got a powerful 11th gen Intel® Core™ i5 processor, so no need to worry about lag slowing you down. You can get productive, juggle multiple apps and multitask to the max.",
+        "images": [
+          "https://brain-images-ssl.cdn.dixons.com/4/9/10227094/u_10227094.jpg",
+          "https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc3/Latitude_7000_pic.jpg"
+        ]
+      },
+      {
+        "title": "Galaxy Tab S7+",
+        "price": 999,
+        "description": " Meet Galaxy Tab S7+. Work and play on the ultra smooth 120Hz display, powered by our most powerful chipset. Get a PC-like experience with the snap of a keyboard, or use the ultra low latency S Pen to write like never before. An immersive tablet experience changing the way you work and play.",
+        "images": [
+          "https://images.samsung.com/is/image/samsung/uk-feature-galaxy-tab-s7-plus-5g-t976-296196634?$FB_TYPE_A_MO_JPG$",
+          "https://c.tenor.com/udyatgFScTkAAAAC/samsung-galaxy-tab-s7series-tab-s7.gif"
+        ]
+      },
+      {
+        "title": "HUAWEI Watch 3",
+        "price": 299,
+        "description": "Let what you wear on your wrist fit seamlessly into your life. The circular finish and rounded screen offer a classic look and flowing feel, while the stunning 1.43-inch AMOLED display pushes smartwatch design into a bright future, right before your eyes.",
+        "images": [
+          "https://img01.huaweifile.com/eu/uk/huawei/pms/product/6941487218820/group/800_800_4327DBC86AFBEEA10B313FF77C19DFB6916A258FF04CBE32.png",
+          "https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/wearables/watch-3/media/huawei-watch-3-video.mp4"
+        ]
+      },
+      {
+        "title": "LG OLED55C14LB 55\" Smart 4K Ultra HD HDR OLED TV with Google Assistant & Amazon Alexa",
+        "price": 2999,
+        "description": "Discover how good entertainment can look with the LG OLED55C14LB 55\" Smart 4K Ultra HD HDR OLED TV with Google Assistant & Amazon Alexa. All its screen pixels are self-lit, so you'll get vibrant colours, super-fine detail and infinite contrast.",
+        "images": [
+          "https://www.lg.com/uk/images/tvs/md07522765/gallery/D-01.jpg",
+          "https://www.lg.com/uk/images/tvs/md07522765/gallery/large10.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "women's clothing",
+    "image": "https://img.ohpolly.com/gJs2NxHrS-u5sWArUA4kBHNbhdc=/fit-in/catalog/product/4/9/4963_6_no-promises-gold-embellished-knee-lenght-bodycon-dress_1.jpg",
+    "tagline": "Possess the dress to impress now!",
+    "products": [
+      {
+        "title": "FIFI - FAIRY PINK BANDAGE MAXI DRESS",
+        "price": 179,
+        "description": "Our signature bodycon silhouette first debuted with our infamous bandage fabric that has been a favourite ever since and 'Fifi' elevates this season's collection in a gorgeous fairy pink hue. The sculpting stretch bandage skims yours curves with a super smooth finish and the pretty sweetheart neckline and slim straps highlight the décolletage beautifully. ",
+        "images": [
+          "https://d166chel5lrjm5.cloudfront.net/images/thumbnails/82/640/960/fifi-p11.jpg",
+          "https://d166chel5lrjm5.cloudfront.net/images/thumbnails/82/640/960/fifi-4.jpg"
+        ]
+      },
+      {
+        "title": "OVERSIZE DENIM OVERSHIRT",
+        "price": 65.99,
+        "description": "Collared overshirt featuring long sleeves with cuffs. Front patch pockets. Ripped detailing. Front metal button fastening.",
+        "images": [
+          "https://static.zara.net/photos///2022/V/0/1/p/0774/270/401/2/w/750/0774270401_1_1_1.jpg?ts=1643634278599",
+          "https://static.zara.net/photos///2022/V/0/1/p/0774/270/401/2/w/750/0774270401_6_1_1.jpg?ts=1643282223852"
+        ]
+      },
+      {
+        "title": "POWER HOUSE WIDE LEG TROUSERS",
+        "price": 79.99,
+        "description": "Get ready to be the ultimate boss babe in our Power House trousers. Designed in a flattering wide-leg fit with side pockets and belt loops, they're complete with chic piping through the centre. We're pairing with the matching blazer and strappy heels for a look made for a boss.",
+        "images": [
+          "https://img.ohpolly.com/3CDuovbG5IqDcvPZniKpc0R08LE=/fit-in/catalog/product/3/1/3196_7_power-house-yellow-tailored-wide-leg-trouser-blazer-suit-set_1.jpg",
+          "https://img.ohpolly.com/OZMC7sdSsPNxAn0BNYuttE7x0eY=/fit-in/catalog/product/3/1/3196_10_power-house-yellow-tailored-wide-leg-trouser-blazer-suit-set_1.jpg"
+        ]
+      },
+      {
+        "title": "CALIFORNIA JOGGERS",
+        "price": 44.99,
+        "description": "High-waist trousers with an elastic waistband. Side pockets. Contrast slogan detail. Hems with elastic cuffs.",
+        "images": [
+          "https://static.zara.net/photos///2022/V/0/1/p/5643/308/803/2/w/750/5643308803_2_1_1.jpg?ts=1642158833582",
+          "https://static.zara.net/photos///2022/V/0/1/p/5643/308/803/2/w/750/5643308803_6_1_1.jpg?ts=1641547735044"
+        ]
+      },
+      {
+        "title": "LUISETTE - ROSE PRINT SATIN MIDI SKIRT",
+        "price": 90,
+        "description": "Our 'Luisette' midi skirt is the kind of elegant, romantic style we think you'll love as much as we do. 'Luisette' is beautifully cut from a fluid silky satin in a romantic rose print that skims your frame and becomes slightly looser for a flattering drape across the body.",
+        "images": [
+          "https://d166chel5lrjm5.cloudfront.net/images/detailed/82/luisette-p52.jpg",
+          "https://d166chel5lrjm5.cloudfront.net/images/detailed/83/luisette-6.jpg"
+        ]
+      }
+    ]
+  }
+]
