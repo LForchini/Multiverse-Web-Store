@@ -41,9 +41,7 @@ const calcTotal = () => {
 
 async function getCart() {
   if (/(^|;)\s*session=/.test(document.cookie)) {
-    const response = await fetch('http://localhost:3001/cart/', {
-      credentials: 'include',
-    });
+    const response = await fetch('api/cart/', { credentials: 'include' });
 
     if (response.status === 400) {
       window.location.href = './loginSignup.html';

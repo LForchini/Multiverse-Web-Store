@@ -24,7 +24,7 @@ window.onscroll = () => {
 
 async function addToCart() {
   if (/(^|;)\s*session=/.test(document.cookie)) {
-    const response = await fetch('http://localhost:3001/cart/add', {
+    const response = await fetch('api/cart/add', {
       method: 'POST',
       credentials: 'include',
       headers: { 'Content-Type': 'application/json' },
@@ -40,7 +40,7 @@ async function addToCart() {
 }
 
 async function loadProductDetails() {
-  const response = await fetch(`http://localhost:3001/products/${productId}`, {
+  const response = await fetch(`api/products/${productId}`, {
     credentials: 'include',
   });
   const product = await response.json();
